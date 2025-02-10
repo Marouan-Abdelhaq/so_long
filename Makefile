@@ -10,7 +10,7 @@ GNL_DIR = get_next_line
 PRINTF_DIR = ft_printf
 
 # Liste des fichiers source
-SRC_FILES = main.c read_map.c render_map.c load_text.c handl_input.c moves_player.c handl_error.c \
+SRC_FILES = main.c read_map.c render_map.c load_text.c handl_input.c moves_player.c handl_error.c ft_exit.c check_path.c\
             $(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c
 
 # Génération des fichiers objets (.o)
