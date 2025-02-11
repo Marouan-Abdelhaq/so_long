@@ -27,8 +27,11 @@ void	valid_map(t_game *game)
 			if (game->map[y][x] != '1' && game->map[y][x] != '0'
 				&& game->map[y][x] != 'C' && game->map[y][x] != 'E'
 				&& game->map[y][x] != 'P')
-				(ft_printf("Erreur : Caractère invalide dans la carte.\n"),
-					exit_ft(game));
+			{
+				ft_printf("Erreur : Caractère invalide dans la carte.\n");
+				free_map(game);
+				exit(1);
+			}
 			x++;
 		}
 		y++;
@@ -67,7 +70,7 @@ void	render_map(t_game *game)
 			else if (game->map[y][x] == 'E')
 				img_e(game, x, y);
 			else if (game->map[y][x] == 'P')
-				mlx_put_image_to_window(game->mlx, game->win, game->player, x
+				mlx_put_image_to_window(game->mlx, game->win, game->toxic_river, x
 					* 32, y * 32);
 		}
 		y++;

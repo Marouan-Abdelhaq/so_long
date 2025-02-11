@@ -56,6 +56,7 @@ void	read_map(char *file, t_game *game)
 	}
 	game->map[read.i] = NULL;
 	game->map_width = ft_strlen(game->map[0]);
+	valid_map(game);
 	handl_caract(game);
 	handl_map(game);
 	handl_wall(game);

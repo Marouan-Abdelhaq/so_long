@@ -50,7 +50,6 @@ void	handle_movement(t_game *game, int x, int y)
 		game->map[game->player_y][game->player_x] = 'E';
 	else
 		game->map[game->player_y][game->player_x] = '0';
-	
 	game->player_x = x;
 	game->player_y = y;
 	game->map[y][x] = 'P';

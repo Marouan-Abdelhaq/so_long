@@ -29,29 +29,17 @@ int	handl_key(int keycode, t_game *game)
 
 void	handl_arg(int argc, char **argv)
 {
-	char	*str;
-	int		i;
+	const char	*str;
 	int		k;
-	int		j;
 
 	if (argc == 2)
 	{
-		i = 0;
-		while (argv[1][i])
-			i++;
-		i--;
-		j = i - 4;
 		str = ".ber";
-		k = 0;
-		while (str[k++])
-			k--;
-		while (i > j && k >= 0)
+		k = ft_strlen(argv[1]);
+
+		if (ft_strncmp(argv[1] + k - 4, str, k) || k <= 4 || (argv[1][k - 4] == '.' && argv[1][k - 5] == '/'))
 		{
-			if (argv[1][i] != str[k] || ft_strlen(argv[1]) <= 4
-				|| (argv[1][i] == '.' && argv[1][i - 1] == '/'))
-				(ft_printf("error\n"), exit(1));
-			i--;
-			k--;
+			(ft_printf("error\n"), exit(1));
 		}
 	}
 }
