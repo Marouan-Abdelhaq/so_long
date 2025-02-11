@@ -46,6 +46,9 @@ typedef struct s_game
 	void	*exit_closed;
 	void	*toxic_river;
 	char	prev_tile;
+
+	int new_x;
+	int new_y;
 }			t_game;
 
 typedef struct s_count

@@ -24,10 +24,14 @@ void	update_player_sprite(t_game *game, int dx, int dy)
 		game->player = game->player_back;
 }
 
+void	ft_win(t_game *game)
+{
+	ft_printf("\U0001F389 Bravo ! Vous avez gagné en ");
+	ft_printf("%d déplacements ! \U0001F389\n", game->move + 1);
+	exit_ft(game);
+}
 void	handle_movement(t_game *game, int x, int y)
 {
-	static int	prec;
-
 	if (game->map[y][x] == '1')
 		return ;
 	if (game->map[y][x] == 'C')
@@ -35,19 +39,20 @@ void	handle_movement(t_game *game, int x, int y)
 		game->collected++;
 		game->map[y][x] = '0';
 	}
-	if (game->map[y][x] == 'E' && game->collected == game->total_collect)
+	if (game->map[y][x] == 'E')
 	{
-		ft_printf("\U0001F389 Bravo ! Vous avez gagné en");
-		ft_printf("%d déplacements ! \U0001F389\n", game->move + 1);
-		exit_ft(game);
+		if (game->collected == game->total_collect)
+			ft_win(game);
+		game->new_x = x;
+		game->new_y = y;
 	}
-	if (prec)
+	if (game->map[game->new_y][game->new_x] == 'P')
 		game->map[game->player_y][game->player_x] = 'E';
 	else
 		game->map[game->player_y][game->player_x] = '0';
+	
 	game->player_x = x;
 	game->player_y = y;
-	prec = (game->map[y][x] == 'E');
 	game->map[y][x] = 'P';
 	game->move++;
 }

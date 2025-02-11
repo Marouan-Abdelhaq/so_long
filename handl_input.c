@@ -43,12 +43,12 @@ void	handl_arg(int argc, char **argv)
 		j = i - 4;
 		str = ".ber";
 		k = 0;
-		while (str[k])
-			k++;
-		k--;
+		while (str[k++])
+			k--;
 		while (i > j && k >= 0)
 		{
-			if (argv[1][i] != str[k])
+			if (argv[1][i] != str[k] || ft_strlen(argv[1]) <= 4
+				|| (argv[1][i] == '.' && argv[1][i - 1] == '/'))
 				(ft_printf("error\n"), exit(1));
 			i--;
 			k--;

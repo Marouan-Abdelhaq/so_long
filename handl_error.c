@@ -59,7 +59,7 @@ void	handl_map(t_game *game)
 	{
 		if (ft_strlen(game->map[y]) != width)
 		{
-			ft_printf("Error\nLa carte doit être de forme rectangulaire.");
+			ft_printf("Error\n");
 			free_map(game);
 			exit(EXIT_FAILURE);
 		}
