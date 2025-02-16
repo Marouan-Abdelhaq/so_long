@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	load_tex(t_game *game)
+void	load_player_tex(t_game *game)
 {
 	int	width;
 	int	height;
@@ -26,6 +26,13 @@ void	load_tex(t_game *game)
 	game->player_right = mlx_xpm_file_to_image(game->mlx,
 			"sprites/player/right.xpm", &width, &height);
 	game->player = game->player_front;
+}
+
+void	load_coll_tex(t_game *game)
+{
+	int	width;
+	int	height;
+
 	game->collect_img1 = mlx_xpm_file_to_image(game->mlx, "sprites/coin1.xpm",
 			&width, &height);
 	game->collect_img2 = mlx_xpm_file_to_image(game->mlx, "sprites/coin2.xpm",
@@ -41,6 +48,13 @@ void	load_tex(t_game *game)
 	game->collect_img7 = mlx_xpm_file_to_image(game->mlx, "sprites/coin7.xpm",
 			&width, &height);
 	game->collect_img = game->collect_img1;
+}
+
+void	load_oth_tex(t_game *game)
+{
+	int	width;
+	int	height;
+
 	game->floor_img = mlx_xpm_file_to_image(game->mlx, "sprites/floor.xpm",
 			&width, &height);
 	game->exit_closed = mlx_xpm_file_to_image(game->mlx,
@@ -51,4 +65,11 @@ void	load_tex(t_game *game)
 			&width, &height);
 	game->toxic_river = mlx_xpm_file_to_image(game->mlx,
 			"sprites/toxic-river.xpm", &width, &height);
+}
+
+void	load_tex(t_game *game)
+{
+	load_player_tex(game);
+	load_coll_tex(game);
+	load_oth_tex(game);
 }

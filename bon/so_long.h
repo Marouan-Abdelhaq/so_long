@@ -53,10 +53,10 @@ typedef struct s_game
 	void	*exit_closed;
 	void	*toxic_river;
 	char	prev_tile;
-	int     count;
+	int		count;
 
-	int new_x;
-	int new_y;
+	int		new_x;
+	int		new_y;
 }			t_game;
 
 typedef struct s_count
@@ -64,6 +64,7 @@ typedef struct s_count
 	int		num_c;
 	int		num_e;
 	int		num_p;
+	int		num_t;
 }			t_count;
 
 typedef struct s_read
@@ -79,7 +80,6 @@ void		load_tex(t_game *game);
 void		move_play(t_game *game, int dx, int dy);
 int			handl_key(int keycode, t_game *game);
 void		position_player(t_game *game);
-// void    count_collect(t_game *game);
 void		handl_arg(int argc, char **argv);
 void		free_map(t_game *game);
 void		handl_caract(t_game *game);
@@ -88,5 +88,8 @@ void		handl_wall(t_game *game);
 void		handl_path(t_game *game);
 int			exit_ft(t_game *game);
 void		valid_map(t_game *game);
-int enmy(t_game *game);
+void		update_display(t_game *game);
+int			enmy(t_game *game);
+void		ft_los(t_game *game);
+void		ft_win(t_game *game);
 #endif

@@ -13,7 +13,7 @@ MLX_DIR = /usr/include/minilibx-linux
 SRC =	$(SRCDIR)/check_path.c $(SRCDIR)/handl_input.c $(SRCDIR)/render_map.c $(SRCDIR)/ft_exit.c $(SRCDIR)/load_text.c $(SRCDIR)/moves_player.c \
 		$(SRCDIR)/handl_error.c  $(SRCDIR)/main.c $(SRCDIR)/read_map.c $(SRCDIR)/get_next_line.c $(SRCDIR)/get_next_line_utils.c
 
-BONUS_SRC = $(BONUSDIR)/check_path.c $(BONUSDIR)/handl_error.c $(BONUSDIR)/main.c $(BONUSDIR)/read_map.c $(BONUSDIR)/enmy.c $(BONUSDIR)/handl_input.c \
+BONUS_SRC = $(BONUSDIR)/check_path.c $(BONUSDIR)/handl_error.c $(BONUSDIR)/main.c $(BONUSDIR)/read_map.c $(BONUSDIR)/enmy.c $(BONUSDIR)/handl_input.c $(BONUSDIR)/ft_end.c \
 			$(BONUSDIR)/render_map.c $(BONUSDIR)/ft_exit.c $(BONUSDIR)/load_text.c $(BONUSDIR)/moves_player.c $(BONUSDIR)/get_next_line.c $(BONUSDIR)/get_next_line_utils.c
 
 OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

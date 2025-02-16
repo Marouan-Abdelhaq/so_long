@@ -31,6 +31,8 @@ t_count	count_elem(t_game *game)
 				count.num_e++;
 			else if (game->map[y][x] == 'P')
 				count.num_p++;
+			else if (game->map[y][x] == 'T')
+				count.num_t++;
 			x++;
 		}
 		y++;

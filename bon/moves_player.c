@@ -24,12 +24,6 @@ void	update_player_sprite(t_game *game, int dx, int dy)
 		game->player = game->player_back;
 }
 
-void	ft_win(t_game *game)
-{
-	ft_printf("\U0001F389 Bravo ! Vous avez gagné en ");
-	ft_printf("%d déplacements ! \U0001F389\n", game->move + 1);
-	exit_ft(game);
-}
 void	handle_movement(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '1')
@@ -42,10 +36,12 @@ void	handle_movement(t_game *game, int x, int y)
 	if (game->map[y][x] == 'E')
 	{
 		if (game->collected == game->total_collect)
-			ft_win(game);
+			(ft_win(game));
 		game->new_x = x;
 		game->new_y = y;
 	}
+	if (game->map[y][x] == 'T')
+		ft_los(game);
 	if (game->map[game->new_y][game->new_x] == 'P')
 		game->map[game->player_y][game->player_x] = 'E';
 	else

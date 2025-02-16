@@ -30,14 +30,14 @@ int	handl_key(int keycode, t_game *game)
 void	handl_arg(int argc, char **argv)
 {
 	const char	*str;
-	int		k;
+	int			k;
 
 	if (argc == 2)
 	{
 		str = ".ber";
 		k = ft_strlen(argv[1]);
-
-		if (ft_strncmp(argv[1] + k - 4, str, k) || k <= 4 || (argv[1][k - 4] == '.' && argv[1][k - 5] == '/'))
+		if (ft_strncmp(argv[1] + k - 4, str, k) || k <= 4 || (argv[1][k
+				- 4] == '.' && argv[1][k - 5] == '/'))
 		{
 			(ft_printf("error\n"), exit(1));
 		}

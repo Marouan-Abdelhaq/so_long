@@ -41,8 +41,8 @@ void	valid_map(t_game *game)
 void	img_e(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == 'P')
-		mlx_put_image_to_window(game->mlx, game->win, game->player, x
-			* 32, y * 32);
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x * 32, y
+			* 32);
 	else if (game->collected == game->total_collect)
 		mlx_put_image_to_window(game->mlx, game->win, game->exit_open, x * 32, y
 			* 32);

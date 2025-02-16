@@ -14,7 +14,7 @@
 
 void	flood_fill(char **map, int x, int y)
 {
-	if (map[y][x] == '1' || map[y][x] == 'D')
+	if (map[y][x] == '1' || map[y][x] == 'D' || map[y][x] == 'T')
 		return ;
 	map[y][x] = 'D';
 	flood_fill(map, x + 1, y);
@@ -40,7 +40,8 @@ void	check_path(char **map, t_game *game)
 				while (y < game->map_height)
 					free(map[y++]);
 				free(map);
-				exit_ft(game);
+				free_map(game);
+				exit(1);
 			}
 			x++;
 		}

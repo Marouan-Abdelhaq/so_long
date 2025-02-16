@@ -47,8 +47,8 @@ typedef struct s_game
 	void	*toxic_river;
 	char	prev_tile;
 
-	int new_x;
-	int new_y;
+	int		new_x;
+	int		new_y;
 }			t_game;
 
 typedef struct s_count

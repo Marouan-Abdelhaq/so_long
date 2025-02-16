@@ -30,6 +30,7 @@ void	ft_win(t_game *game)
 	ft_printf("%d déplacements ! \U0001F389\n", game->move + 1);
 	exit_ft(game);
 }
+
 void	handle_movement(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '1')

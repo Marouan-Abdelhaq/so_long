@@ -32,8 +32,8 @@ void	load_tex(t_game *game)
 			&width, &height);
 	game->exit_closed = mlx_xpm_file_to_image(game->mlx,
 			"./sprites/exit-closed.xpm", &width, &height);
-	game->exit_open = mlx_xpm_file_to_image(game->mlx, "./sprites/open-exit.xpm",
-			&width, &height);
+	game->exit_open = mlx_xpm_file_to_image(game->mlx,
+			"./sprites/open-exit.xpm", &width, &height);
 	game->wall_img = mlx_xpm_file_to_image(game->mlx, "./sprites/wall.xpm",
 			&width, &height);
 	game->toxic_river = mlx_xpm_file_to_image(game->mlx,
