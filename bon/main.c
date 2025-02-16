@@ -39,6 +39,7 @@ int	main(int argc, char **argv)
 	game.map = NULL;
 	ft_memset(&game, 0, sizeof(t_game));
 	read_map(argv[1], &game);
+	valid_map(&game);
 	position_player(&game);
 	game.move = 0;
 	game.mlx = mlx_init();
@@ -49,6 +50,7 @@ int	main(int argc, char **argv)
 	render_map(&game);
 	mlx_key_hook(game.win, handl_key, &game);
 	mlx_hook(game.win, 17, 0, exit_ft, &game);
+	mlx_loop_hook(game.mlx, enmy, &game);
 	mlx_loop(game.mlx);
 	exit_ft(&game);
 	return (0);

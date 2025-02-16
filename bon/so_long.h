@@ -13,10 +13,10 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "ft_printf/ft_printf.h"
-# include "get_next_line/get_next_line.h"
-# include "libft/libft.h"
-# include "minilibx-linux/mlx.h"
+# include "../ft_printf/ft_printf.h"
+# include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
+# include "/usr/include/minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 # include <stdlib.h>
@@ -42,10 +42,18 @@ typedef struct s_game
 	void	*wall_img;
 	void	*floor_img;
 	void	*collect_img;
+	void	*collect_img1;
+	void	*collect_img2;
+	void	*collect_img3;
+	void	*collect_img4;
+	void	*collect_img5;
+	void	*collect_img6;
+	void	*collect_img7;
 	void	*exit_open;
 	void	*exit_closed;
 	void	*toxic_river;
 	char	prev_tile;
+	int     count;
 
 	int new_x;
 	int new_y;
@@ -80,4 +88,5 @@ void		handl_wall(t_game *game);
 void		handl_path(t_game *game);
 int			exit_ft(t_game *game);
 void		valid_map(t_game *game);
+int enmy(t_game *game);
 #endif

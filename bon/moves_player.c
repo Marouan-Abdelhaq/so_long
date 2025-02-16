@@ -61,7 +61,6 @@ void	update_display(t_game *game)
 	char	*move_str;
 
 	move_str = ft_itoa(game->move);
-	ft_printf("Mouvements : %d\n", game->move);
 	render_map(game);
 	mlx_string_put(game->mlx, game->win, 10, 10, 0xFFFFFF, "Mouvement : ");
 	mlx_string_put(game->mlx, game->win, 120, 10, 0xFFFFFF, move_str);

@@ -40,7 +40,10 @@ void	valid_map(t_game *game)
 
 void	img_e(t_game *game, int x, int y)
 {
-	if (game->collected == game->total_collect)
+	if (game->map[y][x] == 'P')
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x
+			* 32, y * 32);
+	else if (game->collected == game->total_collect)
 		mlx_put_image_to_window(game->mlx, game->win, game->exit_open, x * 32, y
 			* 32);
 	else
@@ -57,7 +60,7 @@ void	render_map(t_game *game)
 	while (y < game->map_height)
 	{
 		x = 0;
-		while (x++ < game->map_width)
+		while (x < game->map_width)
 		{
 			mlx_put_image_to_window(game->mlx, game->win, game->floor_img, x
 				* 32, y * 32);
@@ -67,11 +70,9 @@ void	render_map(t_game *game)
 			else if (game->map[y][x] == 'C')
 				mlx_put_image_to_window(game->mlx, game->win, game->collect_img,
 					x * 32, y * 32);
-			else if (game->map[y][x] == 'E')
+			else if (game->map[y][x] == 'E' || game->map[y][x] == 'P')
 				img_e(game, x, y);
-			else if (game->map[y][x] == 'P')
-				mlx_put_image_to_window(game->mlx, game->win, game->toxic_river, x
-					* 32, y * 32);
+			x++;
 		}
 		y++;
 	}
