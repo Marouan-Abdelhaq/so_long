@@ -44,7 +44,6 @@ typedef struct s_game
 	void	*collect_img;
 	void	*exit_open;
 	void	*exit_closed;
-	void	*toxic_river;
 	char	prev_tile;
 
 	int		new_x;

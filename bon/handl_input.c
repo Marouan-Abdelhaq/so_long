@@ -39,7 +39,7 @@ void	handl_arg(int argc, char **argv)
 		if (ft_strncmp(argv[1] + k - 4, str, k) || k <= 4 || (argv[1][k
 				- 4] == '.' && argv[1][k - 5] == '/'))
 		{
-			(ft_printf("error\n"), exit(1));
+			(ft_printf("Erreur\n=> Argument invalid"), exit(1));
 		}
 	}
 }

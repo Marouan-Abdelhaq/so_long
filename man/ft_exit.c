@@ -24,7 +24,6 @@ int	exit_ft(t_game *game)
 	mlx_destroy_image(game->mlx, game->collect_img);
 	mlx_destroy_image(game->mlx, game->exit_closed);
 	mlx_destroy_image(game->mlx, game->exit_open);
-	mlx_destroy_image(game->mlx, game->toxic_river);
 	mlx_destroy_window(game->mlx, game->win);
 	if (game->mlx)
 	{
