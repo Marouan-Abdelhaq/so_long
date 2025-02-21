@@ -27,9 +27,8 @@ void	ft_win(t_game *game)
 	ft_printf("\033[32m╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝\n");
 	ft_printf("     ╚═╝      ╚═════╝ ╚═╝     ╚══════╝\033[0m\n\n");
 	ft_printf("\033[36mTu as terminé le jeu en ");
-	ft_printf("\033[1;33m%d\033[0;36m déplacements !\n", game->move
-		+ 1); 
-    ft_printf("\033[32mTu es un véritable héros ! 🏆\033[0m\n");
+	ft_printf("\033[1;33m%d\033[0;36m déplacements !\n", game->move + 1);
+	ft_printf("\033[32mTu es un véritable héros ! 🏆\033[0m\n");
 	ft_printf("\nMerci d'avoir joué ! À bientôt ! 👋\n\n");
 	exit_ft(game);
 }

@@ -1,14 +1,5 @@
 {
     "files.associations": {
-        "so_long.h": "c",
-        "stdlib.h": "c",
-        "unistd.h": "c",
-        "math.h": "c",
-        "fcntl.h": "c",
-        "mlx.h": "c",
-        "stdio.h": "c",
-        "get_next_line.h": "c",
-        "ft_printf.h": "c"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
+        "so_long.h": "c"
+    }
 }

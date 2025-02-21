@@ -26,8 +26,22 @@ void	update_player_sprite(t_game *game, int dx, int dy)
 
 void	ft_win(t_game *game)
 {
-	ft_printf("\U0001F389 Bravo ! Vous avez gagné en ");
-	ft_printf("%d déplacements ! \U0001F389\n", game->move + 1);
+	ft_printf("\n\033[32m██████╗  █████╗ ███╗   ███╗███████╗\n");
+	ft_printf("     ██████╗ ██╗   ██╗███████╗███████╗\033[0m\n");
+	ft_printf("\033[32m██╔══██╗██╔══██╗████╗ ████║██╔════╝\n");
+	ft_printf("     ██╔══██╗██║   ██║██╔════╝██╔════╝\033[0m\n");
+	ft_printf("\033[32m██║  ██║███████║██╔████╔██║███████╗\n");
+	ft_printf("     ██████╔╝██║   ██║█████╗  █████╗  \033[0m\n");
+	ft_printf("\033[32m██║  ██║██╔══██║██║╚██╔╝██║╚════██║\n");
+	ft_printf("     ██╔═══╝ ██║   ██║██╔══╝  ██╔══╝  \033[0m\n");
+	ft_printf("\033[32m██████╔╝██║  ██║██║ ╚═╝ ██║███████║\n");
+	ft_printf("     ██║     ╚██████╔╝██║     ███████╗\033[0m\n");
+	ft_printf("\033[32m╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝\n");
+	ft_printf("     ╚═╝      ╚═════╝ ╚═╝     ╚══════╝\033[0m\n\n");
+	ft_printf("\033[36mTu as terminé le jeu en ");
+	ft_printf("\033[1;33m%d\033[0;36m déplacements !\n", game->move + 1);
+	ft_printf("\033[32mTu es un véritable héros ! 🏆\033[0m\n");
+	ft_printf("\nMerci d'avoir joué ! À bientôt ! 👋\n\n");
 	exit_ft(game);
 }
 
@@ -63,8 +77,7 @@ void	update_display(t_game *game)
 
 	move_str = ft_itoa(game->move);
 	render_map(game);
-	mlx_string_put(game->mlx, game->win, 10, 10, 0xFFFFFF, "Mouvement : ");
-	mlx_string_put(game->mlx, game->win, 120, 10, 0xFFFFFF, move_str);
+	ft_printf("Mouvement : %s\n", move_str);
 	free(move_str);
 }
 
@@ -77,5 +90,6 @@ void	move_play(t_game *game, int dx, int dy)
 	y = game->player_y + dy;
 	update_player_sprite(game, dx, dy);
 	handle_movement(game, x, y);
-	update_display(game);
+	if (game->map[y][x] != '1')
+		update_display(game);
 }

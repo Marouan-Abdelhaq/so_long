@@ -72,6 +72,7 @@ typedef struct s_read
 	int		fd;
 	char	*ligne;
 	int		i;
+	int		h;
 }			t_read;
 
 void		read_map(char *file, t_game *game);

@@ -45,7 +45,8 @@ void	handl_caract(t_game *game)
 	count = count_elem(game);
 	if (count.num_c < 1 || count.num_e != 1 || count.num_p != 1)
 	{
-		ft_printf("Error\n=> La carte doit contenir 1 sortie, au moins 1 item et 1 position de départ");
+		ft_printf("Error\n=> La carte doit contenir 1 sortie,");
+		ft_printf(" au moins 1 item et 1 position de départ");
 		free_map(game);
 		exit(EXIT_FAILURE);
 	}
@@ -63,7 +64,7 @@ void	handl_map(t_game *game)
 	{
 		if (ft_strlen(game->map[y]) != width)
 		{
-			ft_printf("Error\n=> La carte doit être de forme rectangulaire");
+			ft_printf("Erreur\n=> La carte doit être de forme rectangulaire");
 			free_map(game);
 			exit(EXIT_FAILURE);
 		}
@@ -83,7 +84,7 @@ void	handl_wall(t_game *game)
 	{
 		if (game->map[0][x] != '1' || game->map[game->map_height - 1][x] != '1')
 		{
-			ft_printf("Error\n=> La carte doit être de forme rectangulaire");
+			ft_printf("Erreur\n=> La carte doit être encadrée par des murs");
 			free_map(game);
 			exit(EXIT_FAILURE);
 		}
@@ -93,7 +94,7 @@ void	handl_wall(t_game *game)
 	{
 		if (game->map[y][0] != '1' || game->map[y][game->map_width - 1] != '1')
 		{
-			ft_printf("Error\n=> La carte doit être de forme rectangulaire");
+			ft_printf("Erreur\n=> La carte doit être encadrée par des murs");
 			free_map(game);
 			exit(EXIT_FAILURE);
 		}
